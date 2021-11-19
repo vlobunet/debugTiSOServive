@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FragmentLessons</string>
+    <string name="empty">" "</string>
+    <string name="textView_parameterName">parameterName</string>
+    <string name="textView_parameterAbout">parameterAbout</string>
+    <string name="textView_parameterValue">255</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds">
+        <attr name="actionBar" format="color" />
+        <attr name="cardViewBackground" format="color" />
+        <attr name="listServiceBackground" format="color" />
+        <attr name="listDebugBackground" format="color"/>
+
+        <attr name="textParameterName" format="color" />
+        <attr name="textParameterValue" format="color" />
+        <attr name="textParameterAbout" format="color" />
+    </declare-styleable>
+</resources>

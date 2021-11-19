@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FragmentLessons" parent="Theme.AppCompat.DayNight.DarkActionBar">
+
+        <item name="actionBar">#1B1B1B</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/actionBar</item>
+
+        <item name="cardViewBackground">#303030</item>
+        <item name="listServiceBackground">#1B1B1B</item>
+        <item name="listDebugBackground">#1E1E1E</item>
+        <item name="textParameterValue">#FF9E42</item>
+        <item name="textParameterAbout">#8C8C8C</item>
+        <item name="textParameterName">#EAEAEA</item>
+    </style>
+</resources>
