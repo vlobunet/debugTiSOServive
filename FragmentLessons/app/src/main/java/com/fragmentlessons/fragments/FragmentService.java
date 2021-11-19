@@ -31,12 +31,7 @@ public class FragmentService extends Fragment {
         ListView lv = view.findViewById(R.id.listService);
         ParameterAdapter adapter = new ParameterAdapter(view.getContext(), R.layout.card_view, parameters);
         lv.setAdapter(adapter);
-        MainActivity.PrintMessage(mLog.DEBUG, "DEBUG_MESSAGE", "OK");
-        MainActivity.PrintMessage(mLog.ERROR, "ERROR_MESSAGE", "OK");
-        MainActivity.PrintMessage(mLog.VERBOSE, "VERBOSE_MESSAGE", "OK");
-        MainActivity.PrintMessage(mLog.WARNING, "WARNING_MESSAGE", "OK");
-        MainActivity.PrintMessage(mLog.INFO, "INFO_MESSAGE", "OK");
-
+        MainActivity.PrintMessage(mLog.INFO, "FragmentService", "setAdapter(adapter)");
         return view;
     }
 
@@ -53,5 +48,6 @@ public class FragmentService extends Fragment {
         parameters.add(new Parameter("HYSTERESIS_OF_BREAKING_OPEN", "Размер поля торможения турникета при открытии", "15", R.drawable.degrees, 15, 1, 96));
         parameters.add(new Parameter("HYSTERESIS_OF_BREAKING_CLOSE", "Размер поля торможения турникета при закрытии", "20", R.drawable.degrees, 20, 1, 96));
         parameters.add(new Parameter("TIMER_OPEN_PASSAGE", "Время на совершение прохода", "200", R.drawable.timer, 200, 1, 255));
+        MainActivity.PrintMessage(mLog.INFO, "FragmentService", "setInitialData()");
     }
 }

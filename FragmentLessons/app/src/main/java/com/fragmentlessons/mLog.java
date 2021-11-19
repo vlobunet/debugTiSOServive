@@ -41,7 +41,8 @@ public final class mLog {
 
         TextView message = new TextView(context);
         message.setTextColor(Color.RED);
-        message.setText(String.format("E: %s : %s", tag, msg));
+        message.setTextSize(10);
+        message.setText(String.format("[E] %s : %s", tag, msg));
         row.addView(message);
         return row;
     }
@@ -60,7 +61,8 @@ public final class mLog {
 
         TextView message = new TextView(context);
         message.setTextColor(Color.YELLOW);
-        message.setText(String.format("D: %s : %s", tag, msg));
+        message.setTextSize(10);
+        message.setText(String.format("[D] %s : %s", tag, msg));
         row.addView(message);
         return row;
     }
@@ -80,7 +82,8 @@ public final class mLog {
 
         TextView message = new TextView(context);
         message.setTextColor(Color.WHITE);
-        message.setText(String.format("I: %s : %s", tag, msg));
+        message.setTextSize(10);
+        message.setText(String.format("[I] %s : %s", tag, msg));
 
         row.addView(message);
         return row;
@@ -101,7 +104,8 @@ public final class mLog {
 
         TextView message = new TextView(context);
         message.setTextColor(0xFFFF5400);
-        message.setText(String.format("W: %s : %s", tag, msg));
+        message.setTextSize(10);
+        message.setText(String.format("[W] %s : %s", tag, msg));
 
         row.addView(message);
         return row;
@@ -122,7 +126,8 @@ public final class mLog {
 
         TextView message = new TextView(context);
         message.setTextColor(Color.BLUE);
-        message.setText(String.format("V: %s : %s", tag, msg));
+        message.setTextSize(10);
+        message.setText(String.format("[V] %s : %s", tag, msg));
 
         row.addView(message);
         return row;

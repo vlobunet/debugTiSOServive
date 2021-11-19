@@ -14,8 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fragmentlessons.MainActivity;
 import com.fragmentlessons.R;
 import com.fragmentlessons.data.Parameter;
+import com.fragmentlessons.mLog;
+
 import android.view.animation.AnimationUtils;
 
 import java.util.ArrayList;
@@ -79,11 +82,21 @@ public class ParameterAdapter extends ArrayAdapter<Parameter> {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) { }
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                MainActivity.PrintMessage(mLog.DEBUG,
+                        "onStartTrackingTouch()",
+                        "Id: " + parameter.getParameterName() +
+                                "Value: " + parameter.getParameterValue());
+
+            }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 parameter.setParameterValue(String.valueOf(newValue));
+                MainActivity.PrintMessage(mLog.DEBUG,
+                        "onStopTrackingTouch()",
+                        "Id: " + parameter.getParameterName() +
+                                "Value: " + parameter.getParameterValue());
             }
         });
 

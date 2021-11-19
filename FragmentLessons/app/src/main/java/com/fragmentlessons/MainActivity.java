@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static TableLayout tableLayout = null;
     private static int counter;
     private static Context context = null;
+    private static ScrollView scrollView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,18 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
         tableLayout = (TableLayout) findViewById(R.id.listDebug);
+        tableLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                tableLayout.removeAllViews();
+                counter = 0;
+                return false;
+            }
+        });
+        scrollView = (ScrollView) findViewById(R.id.scrollTable);
     }
 
     public static void PrintMessage(int type, String tag, String data) {
-        Log.e("MainActivity", "start PrintMessage");
         counter++;
 
         if (type == mLog.ERROR) tableLayout.addView(mLog.e(tag, data, counter, context));
@@ -42,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         else if (type == mLog.VERBOSE) tableLayout.addView(mLog.v(tag, data, counter, context));
         else if (type == mLog.DEBUG) tableLayout.addView(mLog.d(tag, data, counter, context));
         else if (type == mLog.INFO) tableLayout.addView(mLog.i(tag, data, counter, context));
-
-        Log.e("MainActivity", "PrintMessage - Complete" + String.format(" %d: %s : %s : %d",type, tag, data, counter));
+        scrollView.fullScroll(View.FOCUS_DOWN);
     }
 }
